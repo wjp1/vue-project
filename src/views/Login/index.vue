@@ -30,7 +30,7 @@
                 </label>
                 <span class="forget">忘记密码？</span>
               </div>
-              <button class="btn" @click.prevent="loginUser">登&nbsp;&nbsp;录</button>
+              <button class="btn" @click.prevent="userLogin">登&nbsp;&nbsp;录</button>
             </form>
 
             <div class="call clearFix">
@@ -67,7 +67,32 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      phone: '',
+      password:''
+    };
+  },
+  methods: {
+    async userLogin() {
+      try {
+         let {phone,password} = this
+         if(phone&&password){
+          await this.$store.dispatch('user/UserLogin',{phone,password})
+        }
+        console.log(this.$route.query.redirect == false);
+        if(this.$route.query.redirect){
+          this.$router.push(this.$route.query.redirect)
+        }else{
+          this.$router.push("/home")
+        }
+        
+      } catch (error) {
+        alert(error.message)
+      }
+     
+    },
+  },
 }
 </script>
 

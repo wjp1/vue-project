@@ -87,7 +87,7 @@
                 <li class="yui3-u-1-5" v-for="(item) in goodList" :key="item.id" @click="toDetailPage(item.id)">
                   <div class="list-wrap">
                     <div class="p-img">
-                      <router-link :to="`/detail/${item.id}`"><img :src="item.defaultImg" /></router-link>
+                      <router-link :to="`/detail/${item.id}`"><img v-lazy="item.defaultImg" /></router-link>
                     </div>
                     <div class="price">
                       <strong>

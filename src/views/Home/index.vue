@@ -34,6 +34,9 @@ export default {
   mounted() {
     //派发action：通过Vuex发起ajax请求，将floor存在仓库中
     this.$store.dispatch('getFloorList')
+
+    //获取用户信息，在首页展示
+    this.$store.dispatch('user/userInfo')
   },
   
 }

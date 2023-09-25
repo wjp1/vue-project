@@ -16,6 +16,11 @@ requests.interceptors.request.use((config)=>{
         //给请求头添加一个字段
         config.headers.userTempId = store.state.detail.uid
     }
+
+    //将token带给服务器
+    if(localStorage.getItem('TOKEN')){
+        config.headers.token = localStorage.getItem('TOKEN')
+    }
     nprogress.start()
     return config
 })

@@ -100,6 +100,82 @@ const reqUserRegister = (data)=>{
         data:data
     })
 }
+
+//登录
+const reqUserLogin = (data)=>{
+    return requests({
+        method: "post", 
+        url: `/user/passport/login`, 
+        data:data
+    })
+}
+
+//获取用户信息【需带token】
+const reqUserInfo = ()=>{
+    return requests({
+        method: "get", 
+        url: "/user/passport/auth/getUserInfo"
+    })
+}
+
+//退出登录
+const reqLoginOut = ()=>{
+    return requests({
+        method: "get", 
+        url: "/user/passport/logout"
+    })
+}
+
+//获取用户地址信息
+const reqAddressInfo = ()=>{
+    return requests({
+        url: "/user/userAddress/auth/findUserAddressList/",
+        method: "get" 
+    })
+}
+
+//获取商品订单
+const reqOrderInfo = ()=>{
+    return requests({
+        url: "/order/auth/trade", 
+        method: "get"
+    })
+}
+
+//提交订单
+const reqSubmitOrder = (tradeNo,data)=>{
+    return requests({
+         url: `/order/auth/submitOrder?tradeNo=${tradeNo}`, 
+         data, 
+         method: "post" 
+    })
+}
+
+//获取订单支付信息
+const reqPayInof = (orderId)=>{
+    return requests({
+        url: `/payment/weixin/createNative/${orderId}`, 
+        method: "get"
+    })
+}
+
+//获取支付订单状况
+const reqPayStatus = (orderId)=>{
+    return requests({
+        url: `/payment/weixin/queryPayStatus/${orderId}`, 
+        method: 'get'
+    })
+}
+
+//获取个人中心
+const reqMyOrderDetail = (page,limit)=>{
+    return requests({
+        url: `/order/auth/${page}/${limit}`, 
+        method: 'get' 
+    })
+}
 export  {reqCategoryList,reqBannerList,reqFloorList,reqSearchInfo,reqDetailInfo,
         reqAddOrUpdataShopCart,reqGetShopCart,reqUpDataShopCar,reqDelShopCart,
-        reqUpdataCheckedType,reqGetCode,reqUserRegister}
+        reqUpdataCheckedType,reqGetCode,reqUserRegister,reqUserLogin,reqUserInfo,
+        reqLoginOut,reqAddressInfo,reqOrderInfo,reqSubmitOrder,reqPayInof,reqPayStatus,
+        reqMyOrderDetail}

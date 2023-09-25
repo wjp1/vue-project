@@ -61,7 +61,7 @@
           <i class="summoney">￥{{totalPrice?totalPrice.toFixed(2):0}}</i>
         </div>
         <div class="sumbtn">
-          <a class="sum-btn" target="_blank">结算</a>
+          <router-link to="/trade" class="sum-btn">结算</router-link>
         </div>
       </div>
     </div>

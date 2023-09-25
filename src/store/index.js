@@ -7,6 +7,7 @@ import search  from "./search"
 import detail from "./detail"
 import shopcart from "./shopcart"
 import user from "./user"
+import trade from "./trade"
 /*//Vuex存储数据的地方
 const state = {}
 //修改数据的方法
@@ -22,6 +23,7 @@ export default new Vuex.Store({
     search,
     detail,
     shopcart,
-    user
+    user,
+    trade
   }
 });
