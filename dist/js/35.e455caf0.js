@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvue_moutaion_shop"]=self["webpackChunkvue_moutaion_shop"]||[]).push([[35],{5035:function(u,n,e){e.r(n),e.d(n,{default:function(){return l}});var t=function(){var u=this,n=u._self._c;return n("div",[u._v(" 我是团购订单内容 ")])},o=[],s={name:""},r=s,a=e(1001),i=(0,a.Z)(r,t,o,!1,null,"551113b4",null),l=i.exports}}]);
+//# sourceMappingURL=35.e455caf0.js.map
